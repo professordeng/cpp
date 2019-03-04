@@ -2,7 +2,7 @@
 
 数组逻辑上是线性表，结构如下
 
-![array](/data-structure/img/array.png)
+![array](/cpp-learning/img/array.png)
 
 C++支持数组数据结构，这是最简单易懂的数据结构，详细请看[C++数组](http://www.runoob.com/cplusplus/cpp-arrays.html)。
 
