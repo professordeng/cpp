@@ -75,5 +75,68 @@ C++编译的程序占用的内存分为以下几个部分
 
    存放函数体的二进制代码。
 
-C++ 测试
+下面我们看这样一段程序
 
+```c++
+#include <iostream>
+
+struct Vector3
+{
+	float x, y, z;
+	Vector3() 
+		: x(10), y(11), z(12){}
+};
+
+int main()
+{
+    /*
+    以下变量都是栈自动分配空间，在window10系统中，最先定义的value
+    在内存的高位，栈快的原因是因为它只需要移动栈指针来分配和释放空间，
+    栈的释放是有范围的，这个范围一般是由{}界定，跳出一个{}，则清空一段栈
+	*/
+	int value = 5;  
+	int array[5];
+	array[0] = 1;
+	array[1] = 2;
+	array[2] = 3;
+	array[3] = 4;
+	array[4] = 5;
+	Vector3 vector;
+
+    /*
+    以下是堆分配空间，new需要向操作系统申请空间，操作系统会从空闲空间链表中找一个比申请
+    大的节点空间给程序使用，因此下面几个变量的存储空间是不联系的，关键字new其实是一个函数
+    通过该代码的汇编语言你可以看到，new都是调用一个特定地址的函数。
+    */
+	int* hvalue = new int;  
+	*hvalue = 5;
+	int* harray = new int[5];
+	harray[0] = 1; 
+	harray[1] = 2;
+	harray[2] = 3;
+	harray[3] = 4;
+	harray[4] = 5;
+	Vector3* hvector = new Vector3();
+
+    //delete关键字也是调用一段函数，释放堆空间
+	delete hvalue;
+	delete[] harray;
+	delete hvector;
+	
+	std::cin.get();
+	return 0;
+}
+```
+
+这里需要强调的是，在栈中的操作更快，因为它们是连续一块内存，所以当读入CPU的时候整行整行读进去的，但是如果大量使用堆，将会有很多缓存miss，这这也是局部性原理的思想。
+
+还有通过观察汇编指令，你会发现定义一个变量，只需要一条CPU指令，直接将5赋值到内存空间，但是使用new的话需要调用new函数，申请空间等操作，远远没有栈的速度快。
+
+结论就是，除非你的数据生存时间需要比你的范围生存时间长，或者你需要存储大量数据才用堆，因为堆空间的申请是很耗时间的。 	 
+
+当然内存分配数域计算机系统的知识，说明对底层可以很大地优化你的代码。
+
+## 参考文献	
+
+- [什么是堆栈](https://baike.baidu.com/item/%E5%A0%86%E6%A0%88/1682032?fr=aladdin)
+- [Stack vs Heap Memory in C++](https://www.youtube.com/watch?v=wJ1L2nSIV1s&t=947s)
