@@ -14,7 +14,7 @@ int main()
 
 1. 预处理（Preprocessing）
 
-   由预处理器完成，将源文件处理为预处理文件。其实就是将代码整合一下，将需要的头文件引入到源文件中，hello.c 预处理后也有上百条代码。
+   由预处理器完成，将源文件处理为预处理文件。其实就是将代码整合一下，将需要的头文件引入到源文件中，hello.c 预处理后也有上百条代码，因此我将输出流定向到hello.i文件中。
 
    ```c++
    g++ -E hello.cpp > hello.i  //生成预处理后的.i文件
@@ -48,7 +48,5 @@ int main()
 
 
 ## 参考文献
-
-- 
 
 - [How C++ Works](https://www.youtube.com/watch?v=SfGuIVzE_Os&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&index=5)
