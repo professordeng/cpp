@@ -1,6 +1,10 @@
 # how cpp works
 
-C++ 从代码到可执行文件需要经过那些过程，下面以`hello.cpp`为例。
+C++ 从代码到可执行文件需要经过以下过程
+
+![compile](/cpp-learning/img/compile.png)
+
+下面以`hello.cpp`为例。
 
 ```c++
 #include <iostream>
