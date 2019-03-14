@@ -78,3 +78,27 @@ int main() {
 ```
 
 输出是 4，也就是说 y 的偏移地址是 4。如果 y 和 z 的定义对调，结果将是 8。
+
+可能当你看到  `(int)&((Vector3*)nullptr)` 这段句子一愣一愣的，但是其实可以当做是各种显示转换的过程。
+
+1. `nullptr`
+
+   就是 0 的宏定义。
+
+2. `(Vector3*)nullptr`
+
+   将 `nullptr` 强制转换为 `Vector3` 类型。这时候该类型指针指向 0。
+
+3. `((Vector3*)nullptr)->y`
+
+   得到类型中的 y 变量。
+
+4. `&((Vector3*)nullptr)->y`
+
+   得到变量地址。
+
+5.  `(int)&((Vector3*)nullptr)->y`
+
+   将地址强制转换为 一个整数。
+
+你可以将 `nullptr` 替换为 4，结果相应 +4。
