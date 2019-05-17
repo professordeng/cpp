@@ -1,4 +1,6 @@
-# ternary operation in c++ (conditional assignment)
+---
+title: c++ 三目运算符
+---
 
 让我们看下面一个例子
 

@@ -1,4 +1,6 @@
-# making and working with libraries in c++
+---
+title: c++ 制作静态链接库
+---
 
 链接库让我们开发变得模块化，变得有层次化，学会在 VS 2017 下建立静态库，有助于合作开发项目。
 

@@ -1,4 +1,6 @@
-# obj lifetime in c++ (Stack/Scope lifetimes)
+---
+title: 栈中对象生成周期
+---
 
 对象的生存周期可以通过它的构造函数和析构函数调用得知。我们先构造一个实体类。
 

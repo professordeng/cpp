@@ -1,4 +1,6 @@
-# mutable in c++
+---
+title: c++ mutable 关键字
+---
 
 `mutable` 是可变的意思，为了突破 `const` 的封锁。也就是说，不管函数有没有 `const` 的限制，`mutable` 变量都可以在里面赋值。
 

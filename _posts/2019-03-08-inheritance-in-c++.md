@@ -1,4 +1,6 @@
-# inheritance in c++
+---
+title: c++ 继承
+---
 
 继承是 C++ 一个重要的特性。
 
@@ -70,7 +72,7 @@ public:
 int main()
 {
 	Player p;
-	// p.x = 2;  这行出错
+	// p.x = 2;  这行出错，因为以 protected 方式继承了
 	std::cout << p.getX() << std::endl;
 	
 	std::cin.get();

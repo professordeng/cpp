@@ -1,4 +1,6 @@
-# interfaces in C++ (pure virtual functions)
+---
+title: c++ 接口 （纯虚函数）
+---
 
 在 `java` 语言中，有专门的关键字叫做接口（interface），在 C++ 中，纯虚函数的作用和接口一样，也可以称为抽象函数。
 

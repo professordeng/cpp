@@ -1,4 +1,6 @@
-# Member Initializer Lists in C++ (Constructor Initializer List)
+---
+title: c++ 初始化列表
+---
 
 每个类实例化的时候都需要有初始函数，C++ 提供了成员初始列表的方式供我们使用，而且我们也要尽可能使用该方法实例化对象，有如下几个原因
 

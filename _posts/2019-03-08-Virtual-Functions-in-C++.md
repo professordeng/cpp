@@ -1,4 +1,6 @@
-# Virtual Functions in C++
+---
+title: c++ 虚拟函数
+---
 
 子类可以用父类指针引用，但是父类不可以用子类指针引用。
 
@@ -36,7 +38,7 @@ int main()
 }
 ```
 
-如上面的程序，如果去掉 `virtual` 和 `override` 关键字，输出的结果不会是 `david` 。
+如上面的程序，如果去掉 `virtual` 和 `override` 关键字，输出的结果不会是 `david` ，而是  `professordeng`。
 
 每一个函数虚函数的类都至少有一个与之对应的虚函数表，其中存放着该类所有的虚函数对应的函数指针。
 

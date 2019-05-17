@@ -1,4 +1,6 @@
-# copying and copy constructions in c++
+---
+title: c++ 拷贝函数
+---
 
 编程的时候，我们会利用一个已知的变量来初始化一个新的变量，这就叫复制。例如
 
@@ -33,7 +35,7 @@ public:
 		memcpy(m_Buffer, other.m_Buffer, m_Size + 1);
 	}
 
-	char& operator[](unsigned int index) {  //重载
+	char& operator[](unsigned int index) {  //重载，返回修改地址
 		return m_Buffer[index];
 	}
 
@@ -52,7 +54,7 @@ std::ostream& operator<<(std::ostream& stream, const String& string)
 	return stream;
 }
 
-void PrintString(const String& string) { //举例说明一般情况下都用 & 引用提高效率
+void PrintString(const String& string) { //一般情况下都用 & 引用提高效率
 	std::cout << string << std::endl;
 }
 
@@ -75,8 +77,8 @@ int main()
 
    这时候就会调用默认操作函数，只有浅拷贝，两个对象共用一个堆内存，销毁内存时会销毁两次，出错。而且你会发现，输出的是 `prifessordeng` 。
 
-   因此，只要类的数据成员涉及到堆内存分配，一定要重写拷贝函数。
+   因此，只要对象的数据成员涉及到堆内存分配，一定要重写拷贝函数。
 
-2. 删掉 `PrintString` 的 & 符
+2. 删掉 `PrintString` 函数中参数的 & 符
 
    这时候传参会出现一次深拷贝，在堆里分配内存是一件很浪费资源的行为，我们仅仅为了输出信息而进行深拷贝，得不偿失，因此，大多数情况，我们都用引用符修饰参数。如果你学过 JAVA 就有所体会。

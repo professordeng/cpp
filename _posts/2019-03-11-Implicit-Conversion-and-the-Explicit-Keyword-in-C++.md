@@ -1,4 +1,8 @@
-# Implicit Conversion and the Explicit Keyword in C++
+---
+title: c++ 类型转换和 explicit
+---
+
+
 
 基本数据类型的显式和隐式转换相信大家都基本会了，我们看一些劲爆的。
 

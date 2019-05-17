@@ -1,4 +1,6 @@
-# using Dynamic Libraries in c++
+---
+title: c++ 动态链接库
+---
 
 动态库不同于静态库，一般已经制作好的库文件有以下几个东西。
 

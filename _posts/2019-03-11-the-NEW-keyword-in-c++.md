@@ -1,4 +1,6 @@
-# the NEW keyword in c++
+---
+title: c++ new 关键字
+---
 
 `new` 的主要目的就是在堆里明确地分配内存。 看下面例子
 
