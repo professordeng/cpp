@@ -1,4 +1,4 @@
-[Archives](/) | [Resources](/resources)
+[Archives](/) | [Resources](/cpp-learning/resources)
 
 ## List of Archives
 
